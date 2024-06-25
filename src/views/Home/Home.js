@@ -9,7 +9,7 @@ function Home(){
 
     const[ todoList,setTodoList]=useState([
         "make some sweet dish for guest.",
-        "online shopping",
+      
     ])
      const[newTask,setnewTask]=useState("")
 
@@ -28,7 +28,15 @@ function Home(){
                   
          />
 
-        <img src={AddIcon} alt="Add" className="icon-add"/>
+        <img src={AddIcon}
+         alt="Add" 
+         className="icon-add"
+         onClick={()=>{
+            setTodoList([...todoList,newTask])
+            setnewTask("")
+           
+         }}
+         />
       </div>
 
     </div>)

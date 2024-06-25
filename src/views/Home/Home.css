@@ -7,12 +7,12 @@
     margin-top: 20px;
 }
 .list-container{
-    background-color: white;
+    background-color: rgb(152, 146, 146);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     height:250px;
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
     overflow: hidden;
     overflow-y: scroll;
