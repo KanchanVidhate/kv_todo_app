@@ -1,0 +1,52 @@
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #080707;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.list-container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height:250px;
+    width: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+   
+} 
+.icon-add{
+     background-color: #007bff;
+     color: white;
+     border-radius:50%;
+     cursor: pointer;
+     width: 40px;
+     margin-top: 15px;
+    
+}
+.icon-add:hover{
+    background-color: #030303;
+    color: white;
+}
+
+.add-input{
+    width: 180px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 19px;
+    margin-right: 20px;
+    margin-top: 19px;
+    cursor: pointer;
+  
+
+}
+.text-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
