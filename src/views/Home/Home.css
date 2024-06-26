@@ -12,7 +12,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     height:250px;
-    width: 250px;
+    width: 300px;
     margin: 0 auto;
     overflow: hidden;
     overflow-y: scroll;
@@ -26,6 +26,7 @@
      cursor: pointer;
      width: 40px;
      margin-top: 15px;
+     margin-left: 20px;
     
 }
 .icon-add:hover{
@@ -36,11 +37,11 @@
 .add-input{
     width: 180px;
     padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #272626;
     border-radius: 8px;
-    font-size: 19px;
+    font-size: 17px;
     margin-right: 20px;
-    margin-top: 19px;
+    margin-top: 8px;
     cursor: pointer;
   
 
@@ -50,3 +51,18 @@
     display: flex;
     justify-content: center;
 }
+
+.select-style{
+    height: 20px;
+    width: auto;
+    border: 1px solid #1e1c1c;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(15, 14, 14);
+    margin-top: 8px;
+   
+}
+
+
