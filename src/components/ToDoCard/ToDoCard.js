@@ -2,7 +2,7 @@ import React from 'react'
 import "./ToDoCard.css"
 import ImgDel from "./delete.png"
 
-function ToDoCard({task,priority}){
+function ToDoCard({index, task,priority,deleteItem}){
      
     const PRIORITY_EMOJI_MAP={
         Shopping:"🛒",
@@ -26,7 +26,12 @@ function ToDoCard({task,priority}){
    
     return(
         <div className="todo-card">
-             <img src={ImgDel} alt="delete" className='delete-btn'/>
+             <img src={ImgDel}
+              alt="delete"
+               className='delete-btn'
+               onClick={()=>{
+                deleteItem(index)
+             }}/>
             {task}
             <span className='priority'style={
                 {

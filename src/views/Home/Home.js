@@ -3,6 +3,7 @@ import AddIcon from "../Home/img/add.png"
 import ToDoCard from "./../../components/ToDoCard/ToDoCard"
 import { useEffect, useState } from "react"
 import toast, { Toaster } from 'react-hot-toast';
+import Swal from "sweetalert2";
 
 
 function Home(){
@@ -25,8 +26,34 @@ function Home(){
   
     localStorage.setItem(todoList,JSON.stringify(todoList))
      }, [todoList])
-     
 
+
+     function deleteItem(index){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+        }).then ((result)=>{
+            if(!result.isConfirmed){
+                return
+            }
+            
+            const newTodoList=todoList.filter((item,i)=>{
+            
+                if(i ==index){
+                   return false
+                } 
+                else{
+                 return true
+                }
+              })
+              setTodoList(newTodoList) 
+        })
+    }
+
+       
      return (<div>
         <h1 className="title">ToDo App</h1>
 
@@ -34,7 +61,9 @@ function Home(){
         { todoList.map((todoItem,i)=>{
            const{task,priority}=todoItem
 
-           return <ToDoCard key={i} task={task} priority={priority}/> 
+           return <ToDoCard key={i}index={i} task={task} priority={priority}
+           deleteItem={deleteItem}
+           /> 
            
         })}
         {
