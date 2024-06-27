@@ -1,20 +1,21 @@
 import "./Home.css"
 import AddIcon from "../Home/img/add.png"
 import ToDoCard from "./../../components/ToDoCard/ToDoCard"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import toast, { Toaster } from 'react-hot-toast';
 
 
 function Home(){
 
-    const[ todoList,setTodoList]=useState([
-        
-        {task:"Buy Groceries",priority:"Shopping"},
-        {task:"Learn React",priority:"Learning"},
-
-        ])
+    const[ todoList,setTodoList]=useState([ ])
      const[newTask,setnewTask]=useState("")
      const[ priority,setPriority]=useState("")
+     
+  useEffect 
+
+     useEffect (()=>{
+      localStorage.setItem("todoList",JSON.stringify(todoList))
+     }, [todoList])
 
     return(<div>
         <h1 className="title">ToDo App</h1>

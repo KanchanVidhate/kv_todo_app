@@ -7,7 +7,8 @@
     margin-top: 20px;
 }
 .list-container{
-    background-color: rgb(152, 146, 146);
+    background: rgb(49,49,51);
+background: linear-gradient(90deg, rgba(49,49,51,1) 12%, rgba(96,96,96,1) 63%, rgb(131, 135, 135) 100%);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
