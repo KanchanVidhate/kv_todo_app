@@ -20,13 +20,12 @@ function Home(){
         }
     },[])
     
-  
+   
      useEffect(()=>{
-    if(todoList.length===0) return
-  
+
+    if(todoList.length === 0) return  
     localStorage.setItem(todoList,JSON.stringify(todoList))
      }, [todoList])
-
 
      function deleteItem(index){
         Swal.fire({
@@ -42,7 +41,7 @@ function Home(){
             
             const newTodoList=todoList.filter((item,i)=>{
             
-                if(i ==index){
+                if(i ===index){
                    return false
                 } 
                 else{
@@ -67,7 +66,7 @@ function Home(){
            
         })}
         {
-            todoList.length ===0?
+            todoList.length === 0?
             <p style={
                 {
                     color:"white",
