@@ -13,8 +13,7 @@ function Home(){
      const[ priority,setPriority]=useState("")
      
      useEffect(()=>{
-        const savedTodoList=localStorage.getItem(todoList)
-         
+        const savedTodoList=localStorage.getItem("todoList")
         if(savedTodoList){
            setTodoList(JSON.parse(savedTodoList))
         }
@@ -22,7 +21,6 @@ function Home(){
     
    
      useEffect(()=>{
-
     if(todoList.length === 0) return  
     localStorage.setItem(todoList,JSON.stringify(todoList))
      }, [todoList])
