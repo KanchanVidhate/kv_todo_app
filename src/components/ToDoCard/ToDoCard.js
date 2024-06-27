@@ -1,6 +1,6 @@
 import React from 'react'
 import "./ToDoCard.css"
-import ImgDel from "./delete.png"
+import ImgDel from "./img/delete.png"
 
 function ToDoCard({index, task,priority,deleteItem}){
      
