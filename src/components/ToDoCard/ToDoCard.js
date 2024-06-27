@@ -1,5 +1,6 @@
 import React from 'react'
 import "./ToDoCard.css"
+import ImgDel from "./delete.png"
 
 function ToDoCard({task,priority}){
      
@@ -25,6 +26,7 @@ function ToDoCard({task,priority}){
    
     return(
         <div className="todo-card">
+             <img src={ImgDel} alt="delete" className='delete-btn'/>
             {task}
             <span className='priority'style={
                 {
@@ -35,6 +37,7 @@ function ToDoCard({task,priority}){
              {  PRIORITY_EMOJI_MAP[priority]}{priority}
 
             </span>
+           
             </div>
     )
 }

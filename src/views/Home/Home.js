@@ -7,17 +7,27 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function Home(){
 
-    const[ todoList,setTodoList]=useState([ ])
+    const[ todoList,setTodoList]=useState([])
      const[newTask,setnewTask]=useState("")
      const[ priority,setPriority]=useState("")
      
-  useEffect 
-
-     useEffect (()=>{
-      localStorage.setItem("todoList",JSON.stringify(todoList))
+     useEffect(()=>{
+        const savedTodoList=localStorage.getItem(todoList)
+         
+        if(savedTodoList){
+           setTodoList(JSON.parse(savedTodoList))
+        }
+    },[])
+    
+  
+     useEffect(()=>{
+    if(todoList.length===0) return
+  
+    localStorage.setItem(todoList,JSON.stringify(todoList))
      }, [todoList])
+     
 
-    return(<div>
+     return (<div>
         <h1 className="title">ToDo App</h1>
 
         <div className="list-container">
@@ -27,7 +37,24 @@ function Home(){
            return <ToDoCard key={i} task={task} priority={priority}/> 
            
         })}
-        </div>
+        {
+            todoList.length ===0?
+            <p style={
+                {
+                    color:"white",
+                    fontSize:"10px",
+                    marginTop:"15px",
+                    marginLeft:"15px",
+                    fontFamily:"cursive"
+                }
+            }>No task added , Please add New Task</p>
+            :
+            null
+            }
+        
+        
+      </div>
+
       
       <div className=" text-container">
         <input type="text"
@@ -69,10 +96,9 @@ function Home(){
            
          }}
          />
+            
       </div>
         <Toaster position="top-center"/>
-    </div>)
-   
-}
+        </div>)}
 
 export default Home
